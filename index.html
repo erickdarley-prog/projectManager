@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>projectManager - Projetos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="login-overlay">
+        <div class="login-card">
+            <h1 class="login-title">projectManager</h1>
+            <form id="login-form" class="login-form">
+                <h2>Login</h2>
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" autocomplete="username" required />
+
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" autocomplete="current-password" required />
+
+                <button type="submit" class="login-button">Entrar</button>
+                <p id="login-error" class="login-error" aria-live="polite">Usuário ou senha inválidos.</p>
+            </form>
+        </div>
+    </div>
+
+    <div id="app" class="app" hidden>
+        <header>
+            <h1>projectManager</h1>
+        </header>
+
+        <div class="layout">
+            <nav class="sidebar">
+                <h2 class="sidebar-title">Menu</h2>
+                <ul class="sidebar-nav">
+                    <li>
+                        <button class="sidebar-link" type="button" data-view="dashboard">Dashboard</button>
+                    </li>
+                    <li>
+                        <button class="sidebar-link active" type="button" data-view="projetos">Projetos</button>
+                    </li>
+                    <li>
+                        <button class="sidebar-link" type="button" data-view="equipe">Equipe</button>
+                    </li>
+                </ul>
+            </nav>
+
+            <main class="main-content">
+                <section id="view-dashboard" class="view" hidden>
+                    <h2>Dashboard</h2>
+                    <p>Em breve vamos colocar informações gerais aqui.</p>
+                </section>
+
+                <section id="view-projetos" class="view">
+                    <div class="projects-header">
+                        <h2>Lista de Projetos</h2>
+                        <button id="open-project-modal" class="project-modal-open-button" type="button">
+                            + Novo projeto
+                        </button>
+                    </div>
+
+                    <ul class="projects-list">
+                    </ul>
+
+                    <div id="project-modal" class="project-modal-overlay" hidden>
+                        <div class="project-modal-card">
+                            <h2>Novo projeto</h2>
+                            <form id="project-form" class="project-form">
+                                <div class="project-form-row">
+                                    <label for="project-title">Nome do projeto</label>
+                                    <input type="text" id="project-title" name="project-title" required />
+                                </div>
+
+                        <div id="tasks-container">
+                            <div class="task-form-group">
+                                <div class="project-form-row">
+                                    <label>Nome da tarefa</label>
+                                    <input type="text" name="task-name" required />
+                                </div>
+                                <div class="project-form-row">
+                                    <label>Responsável (desenvolvedor)</label>
+                                    <select name="task-dev" required></select>
+                                </div>
+                                <div class="project-form-row">
+                                    <label>Peso da tarefa (%)</label>
+                                    <input type="number" name="task-weight" min="1" max="100" value="10" required />
+                                </div>
+                            </div>
+                        </div>
+
+                                <div class="project-form-row">
+                                    <button type="button" id="add-task-button" class="project-form-button project-form-button-secondary">
+                                        + Adicionar tarefa
+                                    </button>
+                                </div>
+
+                                <div class="project-form-row project-form-row-inline">
+                                    <div>
+                                        <label for="project-start">Início</label>
+                                        <input type="date" id="project-start" name="project-start" required />
+                                    </div>
+                                    <div>
+                                        <label for="project-end">Entrega</label>
+                                        <input type="date" id="project-end" name="project-end" required />
+                                    </div>
+                                </div>
+
+                                <div class="project-form-actions">
+                                    <button type="button" id="cancel-project-modal" class="project-form-button project-form-button-secondary">Cancelar</button>
+                                    <button type="submit" class="project-form-button">Salvar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="view-equipe" class="view" hidden>
+                    <div class="team-section">
+                        <div class="team-header">
+                            <div>
+                                <h2>Equipe</h2>
+                                <p class="team-subtitle">Visão geral dos membros da equipe e seus projetos atuais.</p>
+                            </div>
+                            <button id="open-team-modal" class="project-modal-open-button" type="button">
+                                + Adicionar membro
+                            </button>
+                        </div>
+
+                        <div class="team-table-wrapper">
+                            <table class="team-table">
+                                <thead>
+                                    <tr>
+                                        <th>Desenvolvedor</th>
+                                        <th>Cargo / Função</th>
+                                        <th>Projeto atual</th>
+                                        <th>Status</th>
+                                        <th>Data de entrada</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="team-table-body">
+                                    <!-- preenchido via JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="team-modal" class="project-modal-overlay" hidden>
+                        <div class="project-modal-card">
+                            <h2>Membro da equipe</h2>
+                            <form id="team-form" class="project-form">
+                                <div class="project-form-row">
+                                    <label for="team-name">Nome do desenvolvedor</label>
+                                    <input type="text" id="team-name" name="team-name" required />
+                                </div>
+
+                                <div class="project-form-row">
+                                    <label for="team-role">Cargo / Função</label>
+                                    <input type="text" id="team-role" name="team-role" />
+                                </div>
+
+                                <div class="project-form-row">
+                                    <label for="team-project">Projeto atual</label>
+                                    <input type="text" id="team-project" name="team-project" />
+                                </div>
+
+                                <div class="project-form-row">
+                                    <label for="team-status">Status</label>
+                                    <select id="team-status" name="team-status">
+                                        <option value="Ativo">Ativo</option>
+                                        <option value="Em pausa">Em pausa</option>
+                                    </select>
+                                </div>
+
+                                <div class="project-form-row">
+                                    <label for="team-join-date">Data de entrada na equipe</label>
+                                    <input type="date" id="team-join-date" name="team-join-date" required />
+                                </div>
+
+                                <div class="project-form-actions">
+                                    <button type="button" id="cancel-team-modal" class="project-form-button project-form-button-secondary">Cancelar</button>
+                                    <button type="submit" class="project-form-button">Salvar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <footer>
+            projectManager &copy; 2026
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
