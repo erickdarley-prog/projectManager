@@ -53,9 +53,10 @@
                     <div class="dashboard-page-header">
                         <div>
                             <h2>Dashboard</h2>
-                            <p class="dashboard-subtitle">Visão geral rápida dos projetos, esforço e progresso da equipe.</p>
                         </div>
                     </div>
+
+                    <div id="dashboard-performance" class="dashboard-performance"></div>
 
                     <div class="dashboard-layout">
                         <div class="dashboard-column">
@@ -65,6 +66,10 @@
                             </div>
                         </div>
                         <div class="dashboard-column">
+                            <div class="dashboard-panel">
+                                <h3>Capacidade de horas na semana (atual)</h3>
+                                <div id="dashboard-capacity"></div>
+                            </div>
                             <div class="dashboard-panel">
                                 <h3>Progresso em Sprint Points</h3>
                                 <div id="dashboard-chart"></div>
@@ -211,6 +216,11 @@
                                         <option value="Ativo">Ativo</option>
                                         <option value="Em pausa">Em pausa</option>
                                     </select>
+                                </div>
+
+                                <div class="project-form-row">
+                                    <label for="team-weekly-hours">Horas de trabalho por semana</label>
+                                    <input type="number" id="team-weekly-hours" name="team-weekly-hours" min="1" max="80" value="40" required />
                                 </div>
 
                                 <div class="project-form-row">
