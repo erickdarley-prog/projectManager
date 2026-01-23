@@ -50,8 +50,31 @@
 
             <main class="main-content">
                 <section id="view-dashboard" class="view" hidden>
-                    <h2>Dashboard</h2>
-                    <p>Em breve vamos colocar informações gerais aqui.</p>
+                    <div class="dashboard-page-header">
+                        <div>
+                            <h2>Dashboard</h2>
+                            <p class="dashboard-subtitle">Visão geral rápida dos projetos, esforço e progresso da equipe.</p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-layout">
+                        <div class="dashboard-column">
+                            <div class="dashboard-panel">
+                                <h3>Resumo por projeto</h3>
+                                <div id="dashboard-summary"></div>
+                            </div>
+                        </div>
+                        <div class="dashboard-column">
+                            <div class="dashboard-panel">
+                                <h3>Progresso em Sprint Points</h3>
+                                <div id="dashboard-chart"></div>
+                            </div>
+                            <div class="dashboard-panel">
+                                <h3>Contribuição por desenvolvedor</h3>
+                                <div id="dashboard-dev-chart"></div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <section id="view-projetos" class="view">
@@ -85,11 +108,32 @@
                                     <select name="task-dev" required></select>
                                 </div>
                                 <div class="project-form-row">
+                                    <label>Sprint Points</label>
+                                    <select name="task-sprint-points">
+                                        <option value="">Selecione</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="5">5</option>
+                                        <option value="8">8</option>
+                                    </select>
+                                </div>
+                                <div class="project-form-row">
+                                    <label>Progresso (%)</label>
+                                    <input type="number" name="task-progress" min="0" max="100" value="0" required />
+                                </div>
+                                <div class="project-form-row">
                                     <label>Peso da tarefa (%)</label>
                                     <input type="number" name="task-weight" min="1" max="100" value="10" required />
                                 </div>
                             </div>
                         </div>
+                        <p id="task-weight-summary" class="project-form-info">
+                            Peso total das tarefas: <span id="task-weight-total">0%</span>
+                        </p>
+                        <p id="task-weight-error" class="project-form-error" hidden>
+                            A soma dos pesos das tarefas deve ser exatamente 100%.
+                        </p>
 
                                 <div class="project-form-row">
                                     <button type="button" id="add-task-button" class="project-form-button project-form-button-secondary">
@@ -110,7 +154,7 @@
 
                                 <div class="project-form-actions">
                                     <button type="button" id="cancel-project-modal" class="project-form-button project-form-button-secondary">Cancelar</button>
-                                    <button type="submit" class="project-form-button">Salvar</button>
+                                    <button type="submit" id="project-save-button" class="project-form-button">Salvar</button>
                                 </div>
                             </form>
                         </div>
@@ -135,7 +179,6 @@
                                     <tr>
                                         <th>Desenvolvedor</th>
                                         <th>Cargo / Função</th>
-                                        <th>Projeto atual</th>
                                         <th>Status</th>
                                         <th>Data de entrada</th>
                                         <th>Ações</th>
@@ -160,11 +203,6 @@
                                 <div class="project-form-row">
                                     <label for="team-role">Cargo / Função</label>
                                     <input type="text" id="team-role" name="team-role" />
-                                </div>
-
-                                <div class="project-form-row">
-                                    <label for="team-project">Projeto atual</label>
-                                    <input type="text" id="team-project" name="team-project" />
                                 </div>
 
                                 <div class="project-form-row">
