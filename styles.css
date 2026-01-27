@@ -24,6 +24,29 @@ header h1 {
     font-size: 1.6rem;
 }
 
+/* Barra do cabeçalho com botão Sair */
+.header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.logout-button {
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    background-color: #e53935;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #c62828;
+}
+
 main {
     padding: 24px;
 }
@@ -599,6 +622,7 @@ header h1,
     display: flex;
     flex-direction: column;
     gap: 16px;
+    color: #333333;
 }
 
 .dashboard-page-header {
@@ -672,7 +696,7 @@ header h1,
 
 #dashboard-summary {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 12px;
 }
 
@@ -683,6 +707,12 @@ header h1,
     box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
     font-size: 0.9rem;
     border-top: 3px solid #1e88e5;
+    /* Garante que nada extrapole visualmente o card */
+    max-width: 100%;
+    overflow: hidden;
+    /* Força quebra segura de conteúdos longos (labels/valores) */
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .dashboard-project-title {
@@ -693,6 +723,22 @@ header h1,
 
 .dashboard-project-card p {
     margin: 1px 0;
+}
+
+/* Mantém a linha de Progresso em uma única linha e preserva o valor (%) visível */
+.dashboard-project-card p:nth-of-type(4) {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.dashboard-project-card p:nth-of-type(4) > strong {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 #dashboard-chart,
@@ -837,7 +883,7 @@ header h1,
     margin-top: 2px;
     font-size: 1rem;
     font-weight: 600;
-    color: #111827;
+    color: #333333;
 }
 
 .dashboard-capacity-footer {
