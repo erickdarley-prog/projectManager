@@ -100,7 +100,8 @@ main {
 
 .main-content {
     flex: 1;
-    max-width: 1080px;
+    /* Mais espaço horizontal para os cards sem afetar tipografia/cálculos */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -694,9 +695,18 @@ header h1,
     }
 }
 
+/* Em larguras entre 901px e 1140px, dê mais espaço à coluna esquerda
+   para evitar overflow dos cards e manter alinhamento com a coluna direita */
+@media (min-width: 901px) and (max-width: 1140px) {
+    .dashboard-layout {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    }
+}
+
 #dashboard-summary {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    /* Aumenta a largura mínima dos cards para evitar corte de conteúdo em linhas sem quebra */
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
     gap: 12px;
 }
 
@@ -731,6 +741,8 @@ header h1,
     align-items: baseline;
     gap: 6px;
     white-space: nowrap;
+    /* Garante o valor (%) ancorado à direita e o rótulo encurta com reticências */
+    justify-content: space-between;
 }
 
 .dashboard-project-card p:nth-of-type(4) > strong {
@@ -739,6 +751,14 @@ header h1,
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+/* Mantém a linha de ETA (Tiempo estimado restante) em uma única linha, sem quebras 
+   e evitando que o word-break/overflow-wrap do card force quebras indesejadas */
+.dashboard-project-card p:nth-of-type(5) {
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
 }
 
 #dashboard-chart,
