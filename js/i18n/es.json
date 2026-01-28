@@ -1,7 +1,7 @@
 {
   "app": {"name": "projectManager"},
   "header": {"logout": "Salir", "lang_label": "Idioma"},
-  "menu": {"title": "Menú", "dashboard": "Panel", "projects": "Proyectos", "team": "Equipo"},
+  "menu": {"title": "Menú", "dashboard": "Dashboard", "projects": "Proyectos", "team": "Equipo"},
   "login": {
     "title": "Project Manager",
     "heading": "Inicio de sesión",
@@ -60,7 +60,7 @@
     }
   },
   "dashboard": {
-    "title": "Panel",
+    "title": "Dashboard",
     "no_projects": "Ningún proyecto registrado aún.",
     "summary": {"title": "Resumen por proyecto"},
     "capacity": {

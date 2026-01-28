@@ -9,7 +9,7 @@ window.I18N_ES = {
     'Usuário ou senha inválidos.': 'Usuario o contraseña inválidos.',
     'Sair': 'Salir',
     'Menu': 'Menú',
-    'Dashboard': 'Panel',
+    'Dashboard': 'Dashboard',
     'Projetos': 'Proyectos',
     'Equipe': 'Equipo',
 
@@ -128,7 +128,7 @@ window.I18N_ES = {
     'Publicação e Testes': 'Publicación y Pruebas',
     'Portal do Cliente': 'Portal del Cliente',
     'API de Gerenciamento': 'API de Gestión',
-    'Dashboard Administrativo': 'Panel Administrativo',
+    'Dashboard Administrativo': 'Dashboard Administrativo',
     'Sistema de Autenticação': 'Sistema de Autenticación',
     'App Mobile Interno': 'App móvil interna'
   },
