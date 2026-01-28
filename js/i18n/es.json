@@ -1,0 +1,127 @@
+{
+  "app": {"name": "projectManager"},
+  "header": {"logout": "Salir", "lang_label": "Idioma"},
+  "menu": {"title": "Menú", "dashboard": "Panel", "projects": "Proyectos", "team": "Equipo"},
+  "login": {
+    "title": "Project Manager",
+    "heading": "Inicio de sesión",
+    "username": "Usuario",
+    "password": "Contraseña",
+    "submit": "Iniciar sesión",
+    "error": "Usuario o contraseña inválidos."
+  },
+  "projects": {"title": "Lista de Proyectos", "new_button": "+ Nuevo proyecto"},
+  "project": {
+    "modal": {"title": "Nuevo proyecto"},
+    "form": {
+      "project_name": "Nombre del proyecto",
+      "task_name": "Nombre de la tarea",
+      "dev": "Responsable (desarrollador)",
+      "sprint_points": "Puntos de Sprint",
+      "progress": "Progreso (%)",
+      "weight": "Peso de la tarea (%)",
+      "add_task": "+ Agregar tarea",
+      "start": "Inicio",
+      "end": "Entrega",
+      "weight_total_label": "Peso total de las tareas:",
+      "weight_error": "La suma de los pesos de las tareas debe ser exactamente 100%."
+    },
+    "select_dev": "Seleccione un desarrollador",
+    "add_members_first": "Registre miembros del equipo primero",
+    "list": {"tasks_title": "Tareas"},
+    "total_progress_label": "Progreso total del proyecto:",
+    "start_label": "Inicio:",
+    "end_label": "Entrega:",
+    "labels": {"developer": "Desarrollador:", "weight": "Peso:"}
+  },
+  "team": {
+    "title": "Equipo",
+    "subtitle": "Vista general de los miembros del equipo y sus proyectos actuales.",
+    "add_button": "+ Agregar miembro",
+    "table": {
+      "dev": "Desarrollador",
+      "role": "Cargo / Función",
+      "status": "Estado",
+      "hours_week": "Horas/semana",
+      "join_date": "Fecha de ingreso",
+      "actions": "Acciones"
+    },
+    "modal": {"title": "Miembro del equipo"},
+    "form": {
+      "name": "Nombre del desarrollador",
+      "role": "Cargo / Función",
+      "status": "Estado",
+      "weekly_hours": "Horas de trabajo por semana",
+      "join_date": "Fecha de ingreso al equipo"
+    },
+    "status": {
+      "active_label": "Activo",
+      "paused_label": "En pausa"
+    }
+  },
+  "dashboard": {
+    "title": "Panel",
+    "no_projects": "Ningún proyecto registrado aún.",
+    "summary": {"title": "Resumen por proyecto"},
+    "capacity": {
+      "title": "Capacidad de horas en la semana (actual)",
+      "register_members": "Registre miembros del equipo y defina las horas de trabajo por semana para visualizar la capacidad.",
+      "no_active": "No hay desarrolladores activos en el equipo. Registre miembros activos con horas de trabajo por semana.",
+      "no_hours_prefix": "Ningún desarrollador activo tiene horas de trabajo por semana registradas. Edite los miembros para completar ese dato (",
+      "no_hours_suffix": ").",
+      "total": "Capacidad semanal total",
+      "committed": "Horas comprometidas (tareas restantes en la semana)",
+      "remaining": "Capacidad restante de la semana",
+      "progress_used": "{{percent}}% de la capacidad semanal utilizada",
+      "status": {
+        "over": "Por encima de la capacidad semanal",
+        "limit": "Cercano al límite de capacidad semanal",
+        "ok": "Capacidad semanal dentro de lo esperado"
+      }
+    },
+    "progress_sp": {"title": "Progreso en Puntos de Sprint"},
+    "workload": {"title": "Carga de trabajo"},
+    "card": {
+      "total_points": "Total de puntos:",
+      "completed_points": "Puntos finalizados:",
+      "remaining_points": "Puntos restantes:",
+      "progress_sp": "Progreso (SP):",
+      "eta": "Tiempo estimado restante:"
+    },
+    "performance": {
+      "title": "Tu desempeño en las tareas",
+      "user": "Usuario:",
+      "delivery": "Desempeño (SP entregados vs planificados):",
+      "assigned_tasks": "Tareas asignadas:",
+      "completed_tasks": "Tareas finalizadas (100%):",
+      "avg_progress": "Progreso promedio de tus tareas:",
+      "total_sp": "Total de Puntos de Sprint a tu cargo:",
+      "participation": "Tu participación en el esfuerzo del equipo:"
+    },
+    "dev": {
+      "no_contrib": "Aún no hay contribución registrada de desarrolladores.",
+      "contribution_index": "Índice de contribución (proyectos)",
+      "contribution_index_title": "Índice de contribución",
+      "performance_percent": "Desempeño (%)"
+    }
+  },
+  "chart": {
+    "sp_done": "SP finalizados",
+    "sp_remaining": "SP restantes",
+    "sprint_points": "Puntos de Sprint"
+  },
+  "units": {"weeks_short": "semanas", "days": "días", "hours": "h"},
+  "errors": {
+    "read_only": "Acceso de solo lectura.",
+    "load_projects": "Error al cargar proyectos",
+    "delete_project": "Error al eliminar proyecto",
+    "load_team": "Error al cargar miembros del equipo",
+    "save_team_member": "Error al guardar el miembro del equipo",
+    "delete_team_member": "Error al eliminar el miembro del equipo",
+    "project_weight_total": "La suma de los pesos de todas las tareas de este proyecto debe ser exactamente 100%.\n\nSuma actual: {{total}}%.",
+    "weight_sum_below": "La suma de los pesos de las tareas está por debajo de 100% (actual: {{total}}%).",
+    "weight_sum_above": "La suma de los pesos de las tareas supera 100% (actual: {{total}}%).",
+    "save_project_generic": "Error al guardar el proyecto. Verifique si el servidor está en ejecución e intente nuevamente."
+  },
+  "common": {"select": "Seleccione", "cancel": "Cancelar", "save": "Guardar", "user": "Usuario:"}
+}
