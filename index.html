@@ -43,10 +43,19 @@
                         <button class="sidebar-link" type="button" data-view="dashboard">Dashboard</button>
                     </li>
                     <li>
-                        <button class="sidebar-link active" type="button" data-view="projetos">Projetos</button>
+                        <button class="sidebar-link active" type="button" data-view="projetos">Proyectos activos</button>
                     </li>
                     <li>
-                        <button class="sidebar-link" type="button" data-view="equipe">Equipe</button>
+                        <button class="sidebar-link" type="button">Proyectos cancelados</button>
+                    </li>
+                    <li>
+                        <button class="sidebar-link" type="button">Proyectos pausados</button>
+                    </li>
+                    <li>
+                        <button class="sidebar-link" type="button" data-view="equipe">Equipo</button>
+                    </li>
+                    <li>
+                        <button class="sidebar-link" type="button" data-view="backlog">Backlog</button>
                     </li>
                 </ul>
             </nav>
@@ -237,6 +246,54 @@
                                     <button type="submit" class="project-form-button">Salvar</button>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="view-backlog" class="view" hidden>
+                    <div class="projects-header">
+                        <h2>Proyectos aún por realizar</h2>
+                    </div>
+
+                    <div class="dashboard-panel">
+                        <form id="backlog-form" class="project-form" autocomplete="off">
+                            <div class="project-form-row">
+                                <label for="backlog-title">Nombre del proyecto</label>
+                                <input type="text" id="backlog-title" name="backlog-title" />
+                            </div>
+
+                            <div class="project-form-row">
+                                <label for="backlog-desc">Descripción del proyecto</label>
+                                <textarea id="backlog-desc" name="backlog-desc" rows="4"></textarea>
+                            </div>
+
+                            <div class="project-form-row">
+                                <label for="backlog-priority">Prioridad del proyecto</label>
+                                <input type="number" id="backlog-priority" name="backlog-priority" min="1" step="1" />
+                            </div>
+
+                            <div class="project-form-actions">
+                                <button type="submit" id="backlog-submit" class="project-form-button">Agregar proyecto</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="dashboard-panel">
+                        <h3>Backlog</h3>
+                        <div class="team-table-wrapper">
+                            <table class="team-table backlog-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre del proyecto</th>
+                                        <th>Descripción</th>
+                                        <th>Prioridad</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="backlog-table-body">
+                                    <!-- preenchido via JavaScript -->
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </section>

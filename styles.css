@@ -147,7 +147,7 @@ h2 {
 .project-footer {
     margin-top: 12px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .icon-button {
@@ -175,6 +175,12 @@ h2 {
     color: #fff;
 }
 
+.icon-button.cancel-project,
+.icon-button.pause-project {
+    background-color: #1e88e5;
+    color: #fff;
+}
+
 .icon-button.add-item:hover {
     background-color: #1565c0;
 }
@@ -184,6 +190,11 @@ h2 {
 }
 
 .icon-button.edit-item:hover {
+    background-color: #1565c0;
+}
+
+.icon-button.cancel-project:hover,
+.icon-button.pause-project:hover {
     background-color: #1565c0;
 }
 
@@ -535,16 +546,27 @@ header h1,
 
 .project-form input[type="text"],
 .project-form input[type="date"],
-.project-form select {
+.project-form input[type="number"],
+.project-form select,
+.project-form textarea {
     padding: 6px 8px;
     border-radius: 4px;
     border: 1px solid #ccc;
     font-size: 0.9rem;
+    font-family: inherit;
+}
+
+/* Textarea com resize vertical para manter consistência visual */
+.project-form textarea {
+    resize: vertical;
+    min-height: 96px;
 }
 
 .project-form input[type="text"]:focus,
 .project-form input[type="date"]:focus,
-.project-form select:focus {
+.project-form input[type="number"]:focus,
+.project-form select:focus,
+.project-form textarea:focus {
     outline: none;
     border-color: #1e88e5;
     box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.15);
@@ -616,6 +638,21 @@ header h1,
     margin-top: 0;
     margin-bottom: 12px;
     font-size: 1.2rem;
+}
+
+/* Lista do Backlog com o mesmo reset da lista de projetos */
+.backlog-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Backlog — padronização visual com Equipo: remove o "card" do container e expõe laterais cinza */
+#view-backlog .dashboard-panel + .dashboard-panel {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
 }
 
 /* ------ Dashboard ------ */
