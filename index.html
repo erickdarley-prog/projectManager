@@ -31,11 +31,17 @@
         <header>
             <div class="header-bar">
                 <h1>
-                    <svg class="brand-logo" width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
-                        <rect x="1" y="1" width="22" height="22" rx="6" fill="#1565c0" />
-                        <text x="12" y="12" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" font-family="Oswald, Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="0.5">PM</text>
-                    </svg>
-                    projectManager
+                    <span class="brand" aria-label="Project Manager">
+                        <span class="brand-mark">
+                            <svg class="brand-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
+                                <path fill="#ffffff" d="M10 4h-4a2 2 0 0 0-2 2v1h16V7a2 2 0 0 0-2-2h-6l-2-1zM4 9h16v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9z"/>
+                            </svg>
+                            <span class="brand-text">
+                                <span class="brand-pm">PM</span>
+                                <span class="brand-sub">Project Manager</span>
+                            </span>
+                        </span>
+                    </span>
                 </h1>
                 <button id="logout-button" class="logout-button" type="button" aria-label="Sair">Sair</button>
             </div>
@@ -279,7 +285,9 @@
                             </div>
 
                             <div class="project-form-actions">
-                                <button type="submit" id="backlog-submit" class="project-form-button">Agregar proyecto</button>
+                                <button type="submit" id="backlog-add" class="project-form-button">Agregar proyecto</button>
+                                <button type="submit" id="backlog-update" class="project-form-button" hidden>Actualizar proyecto</button>
+                                <button type="button" id="backlog-cancel-edit" class="project-form-button project-form-button-secondary" hidden>Cancelar</button>
                             </div>
                         </form>
                     </div>

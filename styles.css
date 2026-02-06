@@ -27,6 +27,50 @@ header h1 {
     gap: 8px;
 }
 
+/* Nova logo: bloco retangular com ícone + textos (PM em destaque, "Project Manager" abaixo) */
+.brand {
+    display: inline-flex;
+}
+
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 30px;              /* mantém a mesma caixa visual da logo anterior */
+    padding: 0 8px;            /* sem alterar a altura total do header */
+    background-color: #1565c0; /* azul da paleta do sistema */
+    color: #fff;
+    border-radius: 6px;        /* bordas levemente arredondadas */
+    line-height: 1;
+}
+
+.brand-icon {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    display: block;
+}
+
+.brand-text {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.brand-pm {
+    font-family: "Oswald", Arial, Helvetica, sans-serif;
+    font-weight: 700;      /* negrito */
+    font-size: 14px;       /* maior que a linha de baixo */
+    letter-spacing: 0.5px;
+}
+
+.brand-sub {
+    margin-top: 1px;
+    font-size: 10px;       /* menor, abaixo de PM */
+    font-weight: 500;
+    opacity: 0.95;
+}
+
 /* Logo minimalista ao lado do título */
 header h1 .brand-logo {
     display: block; /* remove espaçamento inferior de inline SVG/img */
