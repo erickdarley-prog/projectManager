@@ -30,7 +30,13 @@
     <div id="app" class="app" hidden>
         <header>
             <div class="header-bar">
-                <h1>projectManager</h1>
+                <h1>
+                    <svg class="brand-logo" width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
+                        <rect x="1" y="1" width="22" height="22" rx="6" fill="#1565c0" />
+                        <text x="12" y="12" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" font-family="Oswald, Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="0.5">PM</text>
+                    </svg>
+                    projectManager
+                </h1>
                 <button id="logout-button" class="logout-button" type="button" aria-label="Sair">Sair</button>
             </div>
         </header>
@@ -43,19 +49,19 @@
                         <button class="sidebar-link" type="button" data-view="dashboard">Dashboard</button>
                     </li>
                     <li>
-                        <button class="sidebar-link active" type="button" data-view="projetos">Proyectos activos</button>
+                        <button class="sidebar-link active" type="button" data-view="projetos">Proyectos activos <span class="status-badge" id="badge-proyectos-activos">0</span></button>
                     </li>
                     <li>
-                        <button class="sidebar-link" type="button">Proyectos cancelados</button>
+                        <button class="sidebar-link" type="button">Proyectos cancelados <span class="status-badge" id="badge-proyectos-cancelados">0</span></button>
                     </li>
                     <li>
-                        <button class="sidebar-link" type="button">Proyectos pausados</button>
+                        <button class="sidebar-link" type="button">Proyectos pausados <span class="status-badge" id="badge-proyectos-pausados">0</span></button>
                     </li>
                     <li>
-                        <button class="sidebar-link" type="button" data-view="equipe">Equipo</button>
+                        <button class="sidebar-link" type="button" data-view="equipe">Equipo <span class="status-badge" id="badge-equipo">0</span></button>
                     </li>
                     <li>
-                        <button class="sidebar-link" type="button" data-view="backlog">Backlog</button>
+                        <button class="sidebar-link" type="button" data-view="backlog">Backlog <span class="status-badge" id="badge-backlog">0</span></button>
                     </li>
                 </ul>
             </nav>

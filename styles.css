@@ -22,6 +22,21 @@ header {
 header h1 {
     margin: 0;
     font-size: 1.6rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Logo minimalista ao lado do título */
+header h1 .brand-logo {
+    display: block; /* remove espaçamento inferior de inline SVG/img */
+    width: 30px;   /* mantém a caixa de layout original */
+    height: 30px;  /* mantém a caixa de layout original */
+    /* Escala visual para ocupar quase toda a altura da barra azul sem alterar a altura do header */
+    transform: scale(1.9);
+    transform-origin: left center; /* cresce para a direita e mantém alinhamento vertical com o texto */
+    /* Reserva espaço extra à direita equivalente ao "overflow" causado pela escala (30px * 0.9 = 27px) */
+    margin-right: 27px;
 }
 
 /* Barra do cabeçalho com botão Sair */
@@ -66,6 +81,7 @@ main {
 .sidebar-title {
     margin: 0 0 12px;
     font-size: 1.1rem;
+    color: #fff; /* mesmo tom do título "projectManager" para melhor contraste */
 }
 
 .sidebar-nav {
@@ -76,7 +92,6 @@ main {
     flex-direction: column;
     gap: 4px;
 }
-
 .sidebar-link {
     width: 100%;
     text-align: left;
@@ -87,15 +102,34 @@ main {
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap; /* evita quebra de linha no item e mantém o badge na mesma linha */
 }
 
 .sidebar-link:hover {
     background-color: rgba(255, 255, 255, 0.08);
 }
-
 .sidebar-link.active {
     background-color: #1e88e5;
     color: #fff;
+}
+
+/* Badge numérico no menu lateral: alinhado à direita e padronizado */
+.sidebar .sidebar-link .status-badge {
+    margin-left: auto;            /* empurra o badge para a direita */
+    flex: 0 0 auto;               /* não cresce/encolhe, evita que quebre */
+    background-color: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    min-width: 22px;              /* aparência de pílula consistente */
+    padding: 2px 8px;             /* levemente mais compacto no menu */
+    font-size: 0.75rem;           /* numeração mais discreta */
+}
+
+/* Aumenta ligeiramente o contraste quando o item está ativo */
+.sidebar .sidebar-link.active .status-badge {
+    background-color: rgba(255, 255, 255, 0.24);
 }
 
 .main-content {
@@ -176,7 +210,8 @@ h2 {
 }
 
 .icon-button.cancel-project,
-.icon-button.pause-project {
+.icon-button.pause-project,
+.icon-button.activate-project {
     background-color: #1e88e5;
     color: #fff;
 }
@@ -194,7 +229,8 @@ h2 {
 }
 
 .icon-button.cancel-project:hover,
-.icon-button.pause-project:hover {
+.icon-button.pause-project:hover,
+.icon-button.activate-project:hover {
     background-color: #1565c0;
 }
 
