@@ -124,7 +124,7 @@ window.I18N_ES = {
     'Peso:': 'Peso:',
     'Início:': 'Inicio:',
 'Entrega:': 'Entrega:',
-'Project Manager': 'Gestor de Proyectos',
+'Project Manager': 'Project Manager',
     'Publicação e Testes': 'Publicación y Pruebas',
     'Portal do Cliente': 'Portal del Cliente',
     'API de Gerenciamento': 'API de Gestión',
